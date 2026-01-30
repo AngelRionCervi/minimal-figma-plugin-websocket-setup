@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Minimal Figma plugin setup to connect to a WebSocket server",
   "main": "code.js",
+  "type":"module",
   "scripts": {
     "build": "esbuild code.ts --bundle --outfile=code.js --format=iife",
     "build:watch": "esbuild code.ts --bundle --outfile=code.js --format=iife --watch",
