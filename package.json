@@ -1,0 +1,48 @@
+{
+  "name": "minimal_figma_ws_setup",
+  "version": "1.0.0",
+  "description": "Minimal Figma plugin setup to connect to a WebSocket server",
+  "main": "code.js",
+  "scripts": {
+    "build": "esbuild code.ts --bundle --outfile=code.js --format=iife",
+    "build:watch": "esbuild code.ts --bundle --outfile=code.js --format=iife --watch",
+    "serve": "node ./server/main.ts"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@figma/eslint-plugin-figma-plugins": "*",
+    "@figma/plugin-typings": "^1.123.0",
+    "@types/ws": "^8.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "esbuild": "^0.17.19",
+    "ws": "^8.19.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@figma/figma-plugins/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "root": true,
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ]
+    }
+  }
+}

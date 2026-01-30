@@ -1,0 +1,22 @@
+{
+  "name": "test_ws",
+  "id": "1598411711046099385",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "figma",
+    "figjam",
+    "slides",
+    "buzz"
+  ],
+  "ui": "ui.html",
+  "networkAccess": {
+    "allowedDomains": [
+      "ws://localhost:8080"
+    ],
+    "reasoning": "need to connect to local WebSocket server"
+  }
+}
