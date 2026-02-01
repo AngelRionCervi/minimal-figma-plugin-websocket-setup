@@ -1,12 +1,14 @@
-// This file holds the main code for plugins. Code in this file has access to
-// the *figma document* via the figma global object.
-// You can access browser APIs in the <script> tag inside "ui.html" which has a
-// full browser environment (See https://www.figma.com/plugin-docs/how-plugins-run).
-// Runs this code if the plugin is run in Figma
-if (figma.editorType === "figma") {
-  // This plugin will open a window to prompt the user to enter a number, and
-  // it will then create that many rectangles on the screen.
+/// <reference types="@figma/plugin-typings" />
 
-  // This shows the HTML page in "ui.html".
+if (figma.editorType === "figma") {
   figma.showUI(__html__);
+
+  figma.ui.onmessage = (msg) => {
+    console.log("[ui -> code] Message from UI: ", msg);
+  }
+
+  setTimeout(() => {
+    figma.ui.postMessage("Hello from Figma plugin code!");
+  }, 5000);
 }
+ 
